@@ -1,0 +1,16 @@
+from flask import Flask, jsonify, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/test')
+def test():
+    return jsonify({'status': 'ok', 'message': 'Debug app is running correctly'})
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

@@ -3,7 +3,7 @@ services:
     name: joblens-backend
     env: python
     buildCommand: chmod +x build.sh && ./build.sh
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers=2 --threads=4 --timeout=120 app:app
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers=2 --threads=4 --timeout=120 debug_app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0

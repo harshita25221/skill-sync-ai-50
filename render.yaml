@@ -2,7 +2,7 @@ services:
   - type: web
     name: joblens-backend
     env: python
-    rootDirectory: .
+    rootDirectory: /
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --bind 0.0.0.0:$PORT --workers=2 --threads=4 --timeout=120 app:app
     envVars:
